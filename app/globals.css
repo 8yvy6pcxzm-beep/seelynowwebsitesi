@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  /* B2B Glassmorphism Techwave: tüm site slate navy tek zemin (#080C14) —
+     açık/koyu ayrımı yok, SeelyDeal'in kendi (light) tasarım diline dokunmaz. */
+  body {
+    background: #080c14;
+    color: #f2f1f5;
+  }
+}
+
+@layer utilities {
+  /* Tüm kartlar/formlar için tek cam stili — koyu zemin üzerinde ince
+     buzlu cam, leinDigital referansındaki gibi. */
+  .glass {
+    background: color-mix(in oklch, white 6%, transparent);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid color-mix(in oklch, white 10%, transparent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-dark {
+    background: color-mix(in oklch, white 4%, transparent);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid color-mix(in oklch, white 12%, transparent);
+  }
+
+  /* Neon glow halkası — kart/buton hover'ında (mor/cyan/turuncu karışımı). */
+  .neon-ring {
+    box-shadow:
+      0 0 0 1px color-mix(in oklch, var(--neon-color, #8b5cf6) 45%, transparent),
+      0 0 40px color-mix(in oklch, var(--neon-color, #8b5cf6) 30%, transparent);
+  }
+
+  /* Kenar boyunca ince ışık — 3D objelerin "gerçek ışık" imzası (mimari doküman §2, konsept 04).
+     Kullanım: style={{ "--rim-color": "#FF6A2B" }} ile bileşen bazlı renk verilir. */
+  .rim-glow {
+    box-shadow:
+      inset 0 0 0 1px color-mix(in oklch, var(--rim-color, #ff6a2b) 40%, transparent),
+      0 0 24px color-mix(in oklch, var(--rim-color, #ff6a2b) 25%, transparent);
+  }
+
+  /* Ambient float — 3D objelerin idle durumunda süzülmesi. Reduced-motion tercih
+     edenlerde bileşen tarafında (useReducedMotion) tamamen devre dışı bırakılır,
+     bu utility sadece CSS-only fallback kullanan statik görseller için var. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float {
+      animation: none;
+    }
+  }
+}

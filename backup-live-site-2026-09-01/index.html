@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="seelynow builds AI-powered digital solutions that bring you more customers, more time, and faster operations. Tell us what your business needs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seelynow.com">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seelynow.com">
+    <meta property="og:title" content="seelynow – AI Solutions to Grow Your Business">
+    <meta property="og:description" content="More customers, more time, faster operations. Tell us what your business needs and we'll build the AI-powered digital solution.">
+    <meta property="og:image" content="https://seelynow.com/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="seelynow – AI Solutions to Grow Your Business">
+    <meta name="twitter:description" content="More customers, more time, faster operations — tailored AI solutions for your business.">
+
+    <title>seelynow – AI Solutions to Grow Your Business</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+    <script id="tailwind-config">
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    "primary":                    "#0F172A",
+                    "on-primary":                 "#ffffff",
+                    "primary-container":          "#F1F5F9",
+                    "on-primary-container":       "#475569",
+                    "primary-fixed":              "#F1F5F9",
+                    "primary-fixed-dim":          "#475569",
+                    "on-primary-fixed":           "#0F172A",
+                    "on-primary-fixed-variant":   "#475569",
+                    "secondary":                  "#E64A19",
+                    "on-secondary":               "#ffffff",
+                    "secondary-container":        "#FF5722",
+                    "on-secondary-container":     "#ffffff",
+                    "secondary-fixed":            "#FF5722",
+                    "secondary-fixed-dim":        "#E64A19",
+                    "on-secondary-fixed":         "#ffffff",
+                    "on-secondary-fixed-variant": "#BF360C",
+                    "tertiary":                   "#0F172A",
+                    "on-tertiary":                "#ffffff",
+                    "tertiary-container":         "#F1F5F9",
+                    "on-tertiary-container":      "#475569",
+                    "tertiary-fixed":             "#F1F5F9",
+                    "tertiary-fixed-dim":         "#CBD5E1",
+                    "on-tertiary-fixed":          "#0F172A",
+                    "on-tertiary-fixed-variant":  "#475569",
+                    "surface":                    "#F8FAFC",
+                    "surface-dim":                "#E2E8F0",
+                    "surface-bright":             "#F8FAFC",
+                    "surface-container-lowest":   "#ffffff",
+                    "surface-container-low":      "#F1F5F9",
+                    "surface-container":          "#E9EDF3",
+                    "surface-container-high":     "#E2E8F0",
+                    "surface-container-highest":  "#DAE1EA",
+                    "on-surface":                 "#0F172A",
+                    "on-surface-variant":         "#475569",
+                    "inverse-surface":            "#0F172A",
+                    "inverse-on-surface":         "#F1F5F9",
+                    "inverse-primary":            "#CBD5E1",
+                    "outline":                    "#94A3B8",
+                    "outline-variant":            "#E2E8F0",
+                    "surface-tint":               "#0F172A",
+                    "surface-variant":            "#E2E8F0",
+                    "background":                 "#F8FAFC",
+                    "on-background":              "#0F172A",
+                    "error":                      "#ba1a1a",
+                    "on-error":                   "#ffffff",
+                    "error-container":            "#ffdad6",
+                    "on-error-container":         "#93000a",
+                    "accent-warm":                "#FF5722",
+                    "accent-warm-dim":            "#E64A19",
+                    "accent-warm-soft":           "#F1F5F9",
+                    "on-accent-warm":             "#ffffff"
+                },
+                borderRadius: {
+                    "DEFAULT": "0.5rem",
+                    "sm":  "0.25rem",
+                    "md":  "0.75rem",
+                    "lg":  "1rem",
+                    "xl":  "1.5rem",
+                    "full":"9999px"
+                },
+                fontFamily: {
+                    "sans":    ["Inter", "sans-serif"],
+                    "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                maxWidth: {
+                    "container": "1280px"
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #F8FAFC;
+            color: #201B3D;
+        }
+
+        /* Floating glass nav capsule */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Keyboard focus */
+        :focus-visible {
+            outline: 2px solid #FF5722;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Scroll-reveal */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Service accordion */
+        .service-detail {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+        }
+        .service-item.is-open .service-detail {
+            max-height: 160px;
+            opacity: 1;
+        }
+        .service-item.is-open .chevron {
+            transform: rotate(180deg);
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* Stat counter */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Smooth scroll — offset for the fixed floating navbar */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 96px;
+        }
+
+        /* High-tech ambient light beams — slow drift + soft pulse behind the hero */
+        .beam {
+            position: absolute;
+            width: 60vw;
+            height: 60vw;
+            max-width: 720px;
+            max-height: 720px;
+            border-radius: 50%;
+            filter: blur(10px);
+            will-change: transform, opacity;
+        }
+        .beam-a {
+            top: -18%;
+            left: 8%;
+            animation: beam-drift-a 22s ease-in-out infinite;
+        }
+        .beam-b {
+            bottom: -22%;
+            right: 6%;
+            animation: beam-drift-b 26s ease-in-out infinite;
+        }
+        @keyframes beam-drift-a {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: .55; }
+            50%      { transform: translate(6%, 4%) scale(1.12); opacity: .9; }
+        }
+        @keyframes beam-drift-b {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: .5; }
+            50%      { transform: translate(-5%, -6%) scale(1.15); opacity: .85; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .beam { animation: none !important; }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Skip link (a11y) -->
+<a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-secondary-container focus:text-on-secondary-container focus:rounded-lg focus:font-semibold focus:shadow-lg"
+>
+    Skip to main content
+</a>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<header role="banner">
+    <nav
+        class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl glass-nav border border-white/40 shadow-lg rounded-full transition-shadow"
+        aria-label="Main navigation"
+    >
+        <div class="flex items-center justify-between h-14 pl-4 pr-2">
+
+            <!-- Brand -->
+            <a href="/" class="flex items-center gap-2 group shrink-0" aria-label="seelynow – Back to home">
+                <div
+                    class="w-8 h-8 bg-[#FF5722] rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform"
+                    aria-hidden="true"
+                >
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+                        <circle cx="4" cy="4" r="1.4" fill="currentColor"/><circle cx="9.5" cy="4" r="1.4" fill="currentColor"/><circle cx="15" cy="4" r="1.4" fill="currentColor"/>
+                        <circle cx="4" cy="9.5" r="1.4" fill="currentColor"/><circle cx="9.5" cy="9.5" r="1.4" fill="currentColor"/><circle cx="15" cy="9.5" r="1.4" fill="currentColor"/><circle cx="20.5" cy="9.5" r="1.4" fill="currentColor"/>
+                        <circle cx="4" cy="15" r="1.4" fill="currentColor"/><circle cx="9.5" cy="15" r="1.4" fill="currentColor"/><circle cx="15" cy="15" r="1.4" fill="currentColor"/><circle cx="20.5" cy="15" r="1.4" fill="currentColor"/>
+                        <circle cx="9.5" cy="20.5" r="1.4" fill="currentColor"/><circle cx="15" cy="20.5" r="1.4" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="font-display text-base font-bold text-primary tracking-tight">seelynow</span>
+            </a>
+
+            <!-- Desktop links -->
+            <ul class="hidden lg:flex items-center gap-1" role="list">
+                <li>
+                    <a href="#home"
+                       class="px-3 py-1.5 rounded-full text-primary text-sm font-semibold bg-black/[0.04] transition-colors"
+                       aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="#ai-uses"
+                       class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-black/[0.04] text-sm font-semibold transition-colors">Solutions</a>
+                </li>
+                <li>
+                    <a href="#services"
+                       class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-black/[0.04] text-sm font-semibold transition-colors">Services</a>
+                </li>
+                <li>
+                    <a href="#process"
+                       class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-black/[0.04] text-sm font-semibold transition-colors">How We Work</a>
+                </li>
+            </ul>
+
+            <!-- CTA + mobile toggle -->
+            <div class="flex items-center gap-2">
+                <a
+                    href="https://calendly.com/seelynow/tanisma-gorusmesi"
+                    target="_blank" rel="noopener"
+                    class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 bg-[#0F172A] text-white text-sm font-semibold rounded-full shadow-[0_0_0_rgba(255,87,34,0)] hover:shadow-[0_0_20px_rgba(255,87,34,0.35)] active:scale-95 transition-all duration-300 ease-in-out"
+                >
+                    Book a Call
+                    <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+                </a>
+                <button
+                    id="menu-toggle"
+                    class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full text-primary hover:bg-black/[0.04] transition-colors"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Backdrop scrim — sits between the page (z-0..z-10 content) and the menu panel -->
+    <div
+        id="mobile-menu-backdrop"
+        class="lg:hidden hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-md"
+        aria-hidden="true"
+    ></div>
+
+    <!-- Mobile menu: fully opaque panel, above the backdrop — bg-white with no alpha,
+         no backdrop-blur, so nothing behind it can ever show through -->
+    <div
+        id="mobile-menu"
+        class="lg:hidden hidden fixed top-[76px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl bg-white border border-black/[0.06] shadow-2xl rounded-3xl overflow-hidden"
+        role="dialog"
+        aria-label="Navigation menu"
+    >
+        <!-- Panel header: brand mark + close -->
+        <div class="flex items-center justify-between px-4 pt-4 pb-2">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-[#FF5722] rounded-full flex items-center justify-center text-white" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                        <circle cx="4" cy="4" r="1.4" fill="currentColor"/><circle cx="9.5" cy="4" r="1.4" fill="currentColor"/><circle cx="15" cy="4" r="1.4" fill="currentColor"/>
+                        <circle cx="4" cy="9.5" r="1.4" fill="currentColor"/><circle cx="9.5" cy="9.5" r="1.4" fill="currentColor"/><circle cx="15" cy="9.5" r="1.4" fill="currentColor"/><circle cx="20.5" cy="9.5" r="1.4" fill="currentColor"/>
+                        <circle cx="4" cy="15" r="1.4" fill="currentColor"/><circle cx="9.5" cy="15" r="1.4" fill="currentColor"/><circle cx="15" cy="15" r="1.4" fill="currentColor"/><circle cx="20.5" cy="15" r="1.4" fill="currentColor"/>
+                        <circle cx="9.5" cy="20.5" r="1.4" fill="currentColor"/><circle cx="15" cy="20.5" r="1.4" fill="currentColor"/>
+                    </svg>
+                </div>
+                <span class="font-display text-sm font-bold text-primary tracking-tight">seelynow</span>
+            </div>
+            <button
+                id="menu-close"
+                class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-black/[0.04] transition-colors"
+                aria-label="Close navigation menu"
+            >
+                <span class="material-symbols-outlined text-xl" aria-hidden="true">close</span>
+            </button>
+        </div>
+
+        <ul class="flex flex-col p-3 pt-1 gap-1" role="list">
+            <li>
+                <a href="#home"   class="flex px-4 py-3 text-sm font-semibold text-primary rounded-2xl bg-black/[0.04]">Home</a>
+            </li>
+            <li>
+                <a href="#ai-uses" class="flex px-4 py-3 text-sm font-semibold text-on-surface-variant rounded-2xl hover:bg-black/[0.04] transition-colors">Solutions</a>
+            </li>
+            <li>
+                <a href="#services" class="flex px-4 py-3 text-sm font-semibold text-on-surface-variant rounded-2xl hover:bg-black/[0.04] transition-colors">Services</a>
+            </li>
+            <li>
+                <a href="#process"  class="flex px-4 py-3 text-sm font-semibold text-on-surface-variant rounded-2xl hover:bg-black/[0.04] transition-colors">How We Work</a>
+            </li>
+        </ul>
+        <div class="h-2"></div>
+    </div>
+</header>
+
+<main id="main-content">
+
+    <!-- ════════════ HERO ════════════ -->
+    <section id="home" class="relative pt-40 pb-40 overflow-hidden bg-gradient-to-b from-slate-50/80 via-white to-slate-100/30" aria-label="Hero">
+
+        <!-- Background: slow-drifting ambient light beams -->
+        <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+            <div class="beam beam-a" style="background:radial-gradient(circle, rgba(255,87,34,0.10), transparent 60%);"></div>
+            <div class="beam beam-b" style="background:radial-gradient(circle, rgba(245,158,11,0.08), transparent 60%);"></div>
+        </div>
+
+        <div class="relative z-10 max-w-container mx-auto px-4 md:px-12 text-center">
+
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#FF5722]/20 bg-[#FF5722]/5 text-[#E64A19] text-sm font-semibold mb-10">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FF5722] animate-pulse" aria-hidden="true"></span>
+                Yapay Zekâ Destekli Dijital Otomasyon Ajansı
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold text-slate-900 max-w-4xl mx-auto mb-6 leading-[1.1] tracking-[-0.03em]">
+                <span class="text-[#FF5722]">Yapay Zekâ Otomasyonu</span> ile İşinizi Ölçekleyin.
+            </h1>
+
+            <!-- Sub -->
+            <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+                İşletmeniz için 7/24 çalışan akıllı sistemler kuruyoruz. Daha fazla verim, sıfır karmaşa.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                    href="https://calendly.com/seelynow/tanisma-gorusmesi"
+                    target="_blank" rel="noopener"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F172A] text-white font-semibold rounded-full shadow-[0_0_0_rgba(255,87,34,0)] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,87,34,0.35)] active:scale-95 transition-all duration-300 ease-in-out text-base"
+                >
+                    Book a Call
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+                </a>
+                <a
+                    href="#process"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary border border-black/[0.06] font-semibold rounded-full hover:bg-black/[0.02] hover:-translate-y-0.5 hover:shadow-md active:scale-95 transition-all duration-300 ease-in-out text-base"
+                >
+                    How We Work
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">play_circle</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll cue -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-on-surface-variant/40" aria-hidden="true">
+            <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+        </div>
+    </section>
+
+    <!-- ════════════ STATS ════════════ -->
+    <section class="py-20 bg-surface" aria-label="Why work with us">
+        <div class="max-w-container mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 md:p-9 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between min-h-[180px]">
+                    <div class="w-11 h-11 bg-surface-container rounded-full flex items-center justify-center text-primary mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">bolt</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-primary mb-1.5">AI-First Automation</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Custom systems built around the latest AI models.</p>
+                    </div>
+                </article>
+
+                <article class="fade-up bg-primary-container ring-1 ring-black/5 p-7 md:p-9 rounded-xl shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between min-h-[180px]" style="transition-delay:80ms">
+                    <div class="w-11 h-11 bg-white/70 rounded-full flex items-center justify-center text-secondary-container mb-5 ring-4 ring-white/40" aria-hidden="true">
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-primary mb-1.5">Tailored to You</h3>
+                        <p class="text-sm text-on-primary-container leading-relaxed">Every solution is designed around your exact workflow.</p>
+                    </div>
+                </article>
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 md:p-9 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between min-h-[180px]" style="transition-delay:160ms">
+                    <div class="w-11 h-11 bg-surface-container rounded-full flex items-center justify-center text-primary mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">groups</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-primary mb-1.5">Hands-On Partner</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Direct, personal collaboration on every project.</p>
+                    </div>
+                </article>
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 md:p-9 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col justify-between min-h-[180px]" style="transition-delay:240ms">
+                    <div class="w-11 h-11 bg-surface-container rounded-full flex items-center justify-center text-primary mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">schedule</span>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold text-primary mb-1.5">Fast Turnaround</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">From first idea to live deployment, fast.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ AI USE CASES ════════════ -->
+    <section id="ai-uses" class="py-24 bg-surface-container-low" aria-label="How AI helps your business">
+        <div class="max-w-container mx-auto px-4 md:px-12">
+
+            <div class="text-center max-w-2xl mx-auto mb-14 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline text-on-surface-variant text-sm font-semibold mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
+                    For Your Business
+                </div>
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-primary mb-5 tracking-tight">
+                    "If only there were a solution for this..."
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    Whatever that one thing on your mind is, we'll build a digital solution made just for your business.
+                </p>
+            </div>
+
+            <!-- Business areas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-2xl transition-all duration-300 ease-in-out">
+                    <div class="w-12 h-12 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">campaign</span>
+                    </div>
+                    <h3 class="font-display text-base font-bold text-primary mb-2">Sales &amp; Marketing</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Reach more of the right customers with automations that find, qualify, and make first contact with leads for you — so opportunities come to you instead of you chasing them.</p>
+                </article>
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-2xl transition-all duration-300 ease-in-out" style="transition-delay:80ms">
+                    <div class="w-12 h-12 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">support_agent</span>
+                    </div>
+                    <h3 class="font-display text-base font-bold text-primary mb-2">Customer Support</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Support your customers 24/7 with our chatbots — on WhatsApp, Instagram, email or any channel you choose. Anything they can't resolve still reaches you.</p>
+                </article>
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-2xl transition-all duration-300 ease-in-out" style="transition-delay:160ms">
+                    <div class="w-12 h-12 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">settings_suggest</span>
+                    </div>
+                    <h3 class="font-display text-base font-bold text-primary mb-2">Operations</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Let our automations handle routine work like data entry and reporting, so you and your team can focus on the core of your business.</p>
+                </article>
+
+                <article class="fade-up bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-7 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-2xl transition-all duration-300 ease-in-out" style="transition-delay:240ms">
+                    <div class="w-12 h-12 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm mb-5" aria-hidden="true">
+                        <span class="material-symbols-outlined">account_balance</span>
+                    </div>
+                    <h3 class="font-display text-base font-bold text-primary mb-2">Admin &amp; Finance</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">We lighten your admin and finance load by automating invoicing, documents, appointment scheduling and more.</p>
+                </article>
+
+            </div>
+
+            <!-- Concrete automations -->
+            <div class="fade-up">
+                <h3 class="font-display text-xl md:text-2xl font-bold text-primary text-center mb-3">Popular Automations</h3>
+                <p class="text-on-surface-variant text-center max-w-2xl mx-auto mb-8 leading-relaxed">Start with a ready-made automation or ask for something built just for you. Try any of them with a free demo — and only move forward if it's the right fit.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">chat</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">WhatsApp Support Bot</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Instant replies on WhatsApp, around the clock.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">forward_to_inbox</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">Lead Follow-Up</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Automatic follow-up emails and reminders.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">description</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">Invoice &amp; Document Automation</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Generate and send documents without manual work.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">event</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">Social Media Scheduling</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Plan and publish content automatically.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">inventory_2</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">Order &amp; Inventory Tracking</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Stay on top of stock and orders in real time.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3.5 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-5 rounded-xl border border-white/60 hover:-translate-y-1 hover:border-secondary-container/40 hover:shadow-xl transition-all duration-300 ease-in-out">
+                        <div class="w-10 h-10 shrink-0 bg-primary-container ring-4 ring-primary-container/50 rounded-lg flex items-center justify-center text-accent-warm" aria-hidden="true">
+                            <span class="material-symbols-outlined text-xl">monitoring</span>
+                        </div>
+                        <div>
+                            <h4 class="font-display text-sm font-bold text-primary mb-0.5">Automated Reporting</h4>
+                            <p class="text-on-surface-variant text-xs leading-relaxed">Daily and weekly reports, delivered automatically.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Demo CTA -->
+            <div class="text-center mt-14 fade-up">
+                <a
+                    href="#contact"
+                    class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F172A] text-white font-semibold rounded-full shadow-[0_0_0_rgba(255,87,34,0)] hover:shadow-[0_0_20px_rgba(255,87,34,0.35)] active:scale-95 transition-all duration-300 ease-in-out text-base"
+                >
+                    Request a Demo
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════ SERVICES ════════════ -->
+    <section id="services" class="py-24 bg-surface-container-low" aria-label="Our services">
+        <div class="max-w-container mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <!-- Left -->
+                <div class="fade-up">
+                    <div class="flex justify-center mb-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline text-on-surface-variant text-sm font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
+                            Our Services
+                        </div>
+                    </div>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold text-primary mb-5 leading-tight tracking-tight">
+                        You tell us. We build it.
+                    </h2>
+                    <p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
+                        Tell us where your business is losing time or customers — we design and build
+                        the digital solution that fixes it, working alongside you like part of your team.
+                    </p>
+
+                    <!-- Accordion -->
+                    <div class="space-y-3" role="list">
+
+                        <div
+                            class="service-item is-open bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-6 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] cursor-pointer hover:border-secondary-container/40 transition-all duration-300 ease-in-out"
+                            role="listitem"
+                            tabindex="0"
+                            aria-expanded="true"
+                        >
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="font-display text-base font-bold text-primary">Find Your Best Opportunity</h3>
+                                <span class="material-symbols-outlined text-outline shrink-0 mt-0.5 chevron" aria-hidden="true">expand_more</span>
+                            </div>
+                            <div class="service-detail mt-3">
+                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                    We analyze your current workflows, identify inefficiencies, and design a clear
+                                    automation roadmap tailored to your business operations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="service-item bg-transparent p-6 rounded-xl border border-transparent hover:bg-white/80 hover:backdrop-blur-md hover:ring-1 hover:ring-black/5 hover:border-white/60 hover:shadow-[0_10px_30px_rgba(32,27,61,0.06)] cursor-pointer transition-all duration-300 ease-in-out"
+                            role="listitem"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="font-display text-base font-bold text-outline hover:text-primary transition-colors">Connect Your Tools & Data</h3>
+                                <span class="material-symbols-outlined text-outline shrink-0 mt-0.5 chevron" aria-hidden="true">expand_more</span>
+                            </div>
+                            <div class="service-detail mt-3">
+                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                    We design scalable system architectures that connect your tools, data sources,
+                                    and teams into a unified, efficient operations layer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="service-item bg-transparent p-6 rounded-xl border border-transparent hover:bg-white/80 hover:backdrop-blur-md hover:ring-1 hover:ring-black/5 hover:border-white/60 hover:shadow-[0_10px_30px_rgba(32,27,61,0.06)] cursor-pointer transition-all duration-300 ease-in-out"
+                            role="listitem"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="font-display text-base font-bold text-outline hover:text-primary transition-colors">Simple, Intuitive AI</h3>
+                                <span class="material-symbols-outlined text-outline shrink-0 mt-0.5 chevron" aria-hidden="true">expand_more</span>
+                            </div>
+                            <div class="service-detail mt-3">
+                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                    We craft AI-native interfaces and interaction models that make complex automation
+                                    workflows intuitive and accessible for your entire team.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="service-item bg-transparent p-6 rounded-xl border border-transparent hover:bg-white/80 hover:backdrop-blur-md hover:ring-1 hover:ring-black/5 hover:border-white/60 hover:shadow-[0_10px_30px_rgba(32,27,61,0.06)] cursor-pointer transition-all duration-300 ease-in-out"
+                            role="listitem"
+                            tabindex="0"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-start justify-between gap-4">
+                                <h3 class="font-display text-base font-bold text-outline hover:text-primary transition-colors">Always Improving</h3>
+                                <span class="material-symbols-outlined text-outline shrink-0 mt-0.5 chevron" aria-hidden="true">expand_more</span>
+                            </div>
+                            <div class="service-detail mt-3">
+                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                    We continuously monitor, tune, and improve your automation systems to ensure peak
+                                    performance as your business scales.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: brand graphic card -->
+                <div class="fade-up relative h-[480px] lg:h-[620px] rounded-xl overflow-hidden shadow-2xl bg-primary-container hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(15,23,42,0.22)] transition-all duration-300 ease-in-out" style="transition-delay:100ms">
+                    <div class="absolute inset-0" aria-hidden="true" style="background:radial-gradient(circle at 24% 22%, rgba(240,85,42,0.35), transparent 52%), radial-gradient(circle at 82% 78%, rgba(255,255,255,0.14), transparent 55%), linear-gradient(160deg,#1E293B,#0F172A);"></div>
+                    <svg class="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-[320px] opacity-[0.18] text-secondary-container" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 12 5 6M12 12 19 6M12 12v8M12 12 4 16M12 12 20 15" stroke="currentColor" stroke-width="0.6" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                        <circle cx="5" cy="6" r="1.2" fill="currentColor"/>
+                        <circle cx="19" cy="6" r="1.2" fill="currentColor"/>
+                        <circle cx="12" cy="20" r="1.2" fill="currentColor"/>
+                        <circle cx="4" cy="16" r="1.2" fill="currentColor"/>
+                        <circle cx="20" cy="15" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1A1140]/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <p class="text-white/60 text-xs font-semibold uppercase tracking-widest mb-2">Featured</p>
+                        <h3 class="font-display text-xl font-bold text-white mb-5 leading-snug">End-to-End Workflow Automation</h3>
+                        <a
+                            href="#contact"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-primary font-semibold text-sm rounded-full hover:bg-primary-fixed hover:-translate-y-0.5 transition-all duration-300 ease-in-out"
+                        >
+                            Learn More
+                            <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ PROCESS ════════════ -->
+    <section id="process" class="py-24 bg-surface" aria-label="How we work">
+        <div class="max-w-container mx-auto px-4 md:px-12">
+
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline text-on-surface-variant text-sm font-semibold mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true"></span>
+                    How We Work
+                </div>
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-primary mb-5 tracking-tight">
+                    The shortest path between problem and solution
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    You experience a transparent process, purpose-built so every project delivers measurable results on time.
+                </p>
+            </div>
+
+            <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" role="list">
+
+                <li class="fade-up relative" style="transition-delay:0ms">
+                    <!-- Connector (lg only) -->
+                    <div class="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] right-[-0.5rem] h-px bg-gradient-to-r from-outline-variant/60 to-transparent z-0" aria-hidden="true"></div>
+                    <div class="relative z-10 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-8 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out h-full">
+                        <div class="w-14 h-14 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm font-display font-extrabold text-xl mb-6" aria-hidden="true">01</div>
+                        <h3 class="font-display text-base font-bold text-primary mb-3">Discovery</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">We deep-dive into your operations, map pain points, and find automation opportunities with the highest ROI.</p>
+                    </div>
+                </li>
+
+                <li class="fade-up relative" style="transition-delay:100ms">
+                    <div class="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] right-[-0.5rem] h-px bg-gradient-to-r from-outline-variant/60 to-transparent z-0" aria-hidden="true"></div>
+                    <div class="relative z-10 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-8 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out h-full">
+                        <div class="w-14 h-14 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm font-display font-extrabold text-xl mb-6" aria-hidden="true">02</div>
+                        <h3 class="font-display text-base font-bold text-primary mb-3">Design</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">We architect the solution — defining system flows, integrations, and success metrics before a single line of code is written.</p>
+                    </div>
+                </li>
+
+                <li class="fade-up relative" style="transition-delay:200ms">
+                    <div class="hidden lg:block absolute top-10 left-[calc(50%+2.5rem)] right-[-0.5rem] h-px bg-gradient-to-r from-outline-variant/60 to-transparent z-0" aria-hidden="true"></div>
+                    <div class="relative z-10 bg-white/80 backdrop-blur-md ring-1 ring-black/5 p-8 rounded-xl border border-white/60 shadow-[0_10px_30px_rgba(32,27,61,0.06)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out h-full">
+                        <div class="w-14 h-14 bg-primary-container ring-4 ring-primary-container/50 rounded-xl flex items-center justify-center text-accent-warm font-display font-extrabold text-xl mb-6" aria-hidden="true">03</div>
+                        <h3 class="font-display text-base font-bold text-primary mb-3">Build</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Our engineers build, test, and iterate on your automation system, ensuring reliability and seamless integration.</p>
+                    </div>
+                </li>
+
+                <li class="fade-up" style="transition-delay:300ms">
+                    <div class="bg-primary-container ring-1 ring-black/5 p-8 rounded-xl shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 ease-in-out h-full">
+                        <div class="w-14 h-14 bg-white/70 rounded-xl flex items-center justify-center text-secondary-container font-display font-extrabold text-xl mb-6 ring-4 ring-white/40" aria-hidden="true">04</div>
+                        <h3 class="font-display text-base font-bold text-primary mb-3">Launch &amp; Optimize</h3>
+                        <p class="text-on-primary-container text-sm leading-relaxed">We deploy, monitor performance, and continuously tune your systems so they improve as your business grows.</p>
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+    </section>
+
+    <!-- ════════════ INNOVATION BAND ════════════ -->
+    <section class="py-20 bg-surface-container-low" aria-label="Always up to date">
+        <div class="max-w-container mx-auto px-4 md:px-12">
+            <div class="relative overflow-hidden rounded-2xl bg-primary-container ring-1 ring-black/5 px-8 py-12 md:px-14 md:py-14 text-center fade-up shadow-[0_10px_30px_rgba(15,23,42,0.06)]">
+                <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:radial-gradient(circle at 20% 15%, rgba(255,87,34,0.08), transparent 50%), radial-gradient(circle at 85% 85%, rgba(240,85,42,0.12), transparent 55%);"></div>
+                <div class="relative">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/60 text-on-primary-container text-sm font-semibold mb-6">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse" aria-hidden="true"></span>
+                        Always Up to Date
+                    </div>
+                    <h2 class="font-display text-2xl md:text-4xl font-bold text-primary max-w-3xl mx-auto mb-4 tracking-tight leading-snug">
+                        Every new technology could be your next business partner.
+                    </h2>
+                    <p class="text-on-primary-container text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                        We explore how each new advance can add value to your business — and keep you up to date, always, under the <span class="text-secondary-container font-semibold">seelynow</span> roof.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ CTA ════════════ -->
+    <section id="contact" class="pt-28 pb-44 bg-primary-container relative overflow-hidden" aria-label="Contact us">
+        <div
+            class="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+            style="background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(240,85,42,0.14) 0%, transparent 65%), radial-gradient(ellipse 60% 40% at 15% 0%, rgba(255,87,34,0.06) 0%, transparent 60%);"
+        ></div>
+        <!-- Fade seam: pre-blends this section's bottom into the footer's dark navy -->
+        <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#0F172A] pointer-events-none" aria-hidden="true"></div>
+
+        <div class="max-w-container mx-auto px-4 md:px-12 relative z-10 text-center">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-primary mb-4 tracking-tight max-w-3xl mx-auto fade-up">
+                Ready to take your business<br class="hidden sm:block"> to the next level?
+            </h2>
+            <p class="text-lg text-on-primary-container mb-10 max-w-lg mx-auto fade-up">
+                Book a free 30-minute discovery call. No commitment — just clarity on where AI can help you most.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up">
+                <a
+                    href="https://calendly.com/seelynow/tanisma-gorusmesi"
+                    target="_blank" rel="noopener"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F172A] text-white font-semibold rounded-full shadow-[0_0_0_rgba(255,87,34,0)] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(255,87,34,0.35)] active:scale-95 transition-all duration-300 ease-in-out text-base"
+                >
+                    Book a Free Call
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+                </a>
+                <a
+                    href="mailto:info@seelynow.com"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/70 backdrop-blur-md border border-white/60 ring-1 ring-black/5 text-primary font-semibold rounded-full hover:bg-white hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300 ease-in-out text-base"
+                >
+                    <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
+                    info@seelynow.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="bg-[#0F172A] pt-16 pb-6 relative overflow-hidden" role="contentinfo">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:radial-gradient(circle at 12% 0%, rgba(255,87,34,0.10), transparent 55%), radial-gradient(circle at 90% 100%, rgba(240,85,42,0.14), transparent 50%);"></div>
+    <div class="max-w-container mx-auto px-4 md:px-12 relative">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-2">
+                <a href="/" class="flex items-center gap-2.5 mb-5 group w-fit" aria-label="seelynow – Home">
+                    <div class="w-8 h-8 bg-secondary-container rounded-full flex items-center justify-center text-on-secondary-container" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">
+                            <circle cx="4" cy="4" r="1.4" fill="currentColor"/><circle cx="9.5" cy="4" r="1.4" fill="currentColor"/><circle cx="15" cy="4" r="1.4" fill="currentColor"/>
+                            <circle cx="4" cy="9.5" r="1.4" fill="currentColor"/><circle cx="9.5" cy="9.5" r="1.4" fill="currentColor"/><circle cx="15" cy="9.5" r="1.4" fill="currentColor"/><circle cx="20.5" cy="9.5" r="1.4" fill="currentColor"/>
+                            <circle cx="4" cy="15" r="1.4" fill="currentColor"/><circle cx="9.5" cy="15" r="1.4" fill="currentColor"/><circle cx="15" cy="15" r="1.4" fill="currentColor"/><circle cx="20.5" cy="15" r="1.4" fill="currentColor"/>
+                            <circle cx="9.5" cy="20.5" r="1.4" fill="currentColor"/><circle cx="15" cy="20.5" r="1.4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="font-display text-lg font-extrabold text-white">seelynow</span>
+                </a>
+                <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+                    Digital automation and AI integration agency helping businesses work smarter, not harder.
+                </p>
+                <div class="flex gap-3 mt-6">
+                    <a
+                        href="mailto:info@seelynow.com"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-300"
+                        aria-label="Send us an email"
+                    >
+                        <span class="material-symbols-outlined text-sm" aria-hidden="true">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Company links -->
+            <nav aria-label="Company links">
+                <p class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-4">Company</p>
+                <ul class="space-y-3" role="list">
+                    <li><a href="#services" class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">Services</a></li>
+                    <li><a href="#process"  class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">How We Work</a></li>
+                    <li><a href="#contact"  class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Legal links -->
+            <nav aria-label="Legal links">
+                <p class="text-white/40 text-xs font-semibold uppercase tracking-widest mb-4">Legal</p>
+                <ul class="space-y-3" role="list">
+                    <li><a href="/privacy.html" class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">Privacy Policy</a></li>
+                    <li><a href="/terms.html" class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">Terms of Use</a></li>
+                    <li><a href="/gdpr.html" class="text-white/75 hover:text-secondary-fixed transition-colors text-sm">GDPR</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="border-t border-white/15 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p class="text-white/60 text-xs">&copy; 2026 seelynow Digital Automation Agency. All rights reserved.</p>
+            <p class="text-white/35 text-xs">Built with precision. Powered by AI.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ════════════ SCRIPTS ════════════ -->
+<script>
+(function () {
+    'use strict';
+
+    // ── Mobile menu ──────────────────────────────────
+    const toggle   = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const closeBtn = document.getElementById('menu-close');
+    const menuIcon = toggle.querySelector('.material-symbols-outlined');
+
+    function openMenu() {
+        mobileMenu.classList.remove('hidden');
+        backdrop.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        menuIcon.textContent = 'close';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        backdrop.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        menuIcon.textContent = 'menu';
+        document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) openMenu(); else closeMenu();
+    });
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // ── Service accordion ────────────────────────────
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    const OPEN_CLASSES = ['bg-white/80', 'backdrop-blur-md', 'ring-1', 'ring-black/5', 'border-white/60', 'shadow-[0_10px_30px_rgba(32,27,61,0.06)]'];
+
+    function openItem(item) {
+        serviceItems.forEach(i => {
+            i.classList.remove('is-open', ...OPEN_CLASSES);
+            i.classList.add('bg-transparent', 'border-transparent');
+            i.setAttribute('aria-expanded', 'false');
+        });
+        item.classList.add('is-open', ...OPEN_CLASSES);
+        item.classList.remove('bg-transparent', 'border-transparent');
+        item.setAttribute('aria-expanded', 'true');
+    }
+
+    serviceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (item.classList.contains('is-open')) return;
+            openItem(item);
+        });
+        item.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openItem(item); }
+        });
+    });
+
+    // ── Scroll-reveal (IntersectionObserver) ─────────
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── Smooth-scroll anchors ─────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            if (!id || id === '#') return;
+            const target = document.querySelector(id);
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+
+}());
+</script>
+
+<!-- ════════════ i18n (TR / EN) ════════════ -->
+<script>
+(function () {
+    'use strict';
+
+    // Çeviri sözlüğü — anahtar = normalize edilmiş İngilizce metin
+    const TR = {
+        // Navigasyon & ortak
+        "Home": "Ana Sayfa",
+        "About": "Hakkımızda",
+        "Services": "Hizmetler",
+        "How We Work": "Nasıl Çalışırız",
+        "Book a Call": "Görüşme Ayarla",
+        "Book a Free Call": "Ücretsiz Görüşme Ayarla",
+        "About Us": "Hakkımızda",
+        "Contact": "İletişim",
+        "Company": "Şirket",
+        "Legal": "Yasal",
+        "Privacy Policy": "Gizlilik Politikası",
+        "Terms of Use": "Kullanım Şartları",
+        "GDPR": "KVKK",
+        "Learn More": "Daha Fazla Bilgi",
+        "Featured": "Öne Çıkan",
+
+        // Hero
+        "AI-Powered Digital Automation Agency": "Yapay Zekâ Destekli Dijital Otomasyon Ajansı",
+        "More customers. More time.": "Daha fazla müşteri. Daha fazla zaman.",
+        "Less busywork.": "Daha az koşuşturma.",
+        "Just tell us your goal — and we'll handle the rest with an AI-powered solution that takes you there.":
+            "Aklınızdaki hedefi anlatın yeter — gerisini, sizi oraya taşıyacak yapay zekâ çözümüyle biz halledelim.",
+
+        // Değer önerileri
+        "AI-First Automation": "Yapay Zekâ Odaklı Otomasyon",
+        "Custom systems built around the latest AI models.": "En güncel yapay zekâ modelleri üzerine kurulu özel sistemler.",
+        "Tailored to You": "Size Özel",
+        "Every solution is designed around your exact workflow.": "Her çözüm tam olarak sizin iş akışınıza göre tasarlanır.",
+        "Hands-On Partner": "Birebir Çalışma",
+        "Direct, personal collaboration on every project.": "Her projede doğrudan, kişisel iş birliği.",
+        "Fast Turnaround": "Hızlı Teslim",
+        "From first idea to live deployment, fast.": "İlk fikirden canlı sisteme, hızlıca.",
+
+        // Kullanım alanları (AI)
+        "Solutions": "Çözümler",
+        "For Your Business": "İşletmeniz İçin",
+        "\"If only there were a solution for this...\"": "\"Keşke şuna bir çözüm olsaydı...\"",
+        "Whatever that one thing on your mind is, we'll build a digital solution made just for your business.":
+            "İşletmenizde aklınıza takılan o şey her neyse, size özel dijital çözümü biz geliştirelim.",
+        "Sales & Marketing": "Satış & Pazarlama",
+        "Reach more of the right customers with automations that find, qualify, and make first contact with leads for you — so opportunities come to you instead of you chasing them.":
+            "Müşteri adaylarını sizin için tespit eden, niteleyen ve ilk teması kuran otomasyonlarımızla daha fazla doğru müşteriye ulaşın — fırsatları siz kovalamayın, fırsatlar size gelsin.",
+        "Customer Support": "Müşteri Desteği",
+        "Support your customers 24/7 with our chatbots — on WhatsApp, Instagram, email or any channel you choose. Anything they can't resolve still reaches you.":
+            "Chat botlarımızla müşterilerinize 7/24 destek olun — WhatsApp, Instagram, e-posta ya da seçtiğiniz kanaldan. Çözülemeyen durumlarda konu yine size ulaşır.",
+        "Operations": "Operasyon",
+        "Let our automations handle routine work like data entry and reporting, so you and your team can focus on the core of your business.":
+            "Veri girişi, rapor hazırlama gibi rutin işleri otomasyonlarımız sizin için yapsın; siz ve ekibiniz işin özüne odaklanın.",
+        "Always Up to Date": "Her Zaman Güncel",
+        "Every new technology could be your next business partner.": "Her yeni teknoloji, işletmenizin yeni bir iş ortağı olabilir.",
+        "We explore how each new advance can add value to your business — and keep you up to date, always, under the":
+            "Gelişen her yeni teknolojiyi sizin için yakından takip eder, işinize nasıl değer katabileceğini araştırırız;",
+        "roof.": "çatısı altında işletmenizi her zaman güncel tutarız.",
+        "Admin & Finance": "Yönetim & Finans",
+        "We lighten your admin and finance load by automating invoicing, documents, appointment scheduling and more.":
+            "Faturalandırma ve belgelendirme, randevu planlama ve benzeri işleri otomatikleştirerek yönetim ve finans tarafında yükünüzü hafifletiriz.",
+        "Popular Automations": "Sık Kurduğumuz Otomasyonlar",
+        "Start with a ready-made automation or ask for something built just for you. Try any of them with a free demo — and only move forward if it's the right fit.":
+            "Hazır bir otomasyonla başlayın ya da size özel bir çözüm isteyin. Hepsini ücretsiz demo ile deneyin — yalnızca işinize yarıyorsa devam edin.",
+        "WhatsApp Support Bot": "WhatsApp Destek Botu",
+        "Instant replies on WhatsApp, around the clock.": "WhatsApp'ta 7/24 anında yanıt.",
+        "Lead Follow-Up": "Müşteri Adayı Takibi",
+        "Automatic follow-up emails and reminders.": "Otomatik takip e-postaları ve hatırlatmalar.",
+        "Invoice & Document Automation": "Fatura & Belge Otomasyonu",
+        "Generate and send documents without manual work.": "Belgeleri elle uğraşmadan oluşturup gönderin.",
+        "Social Media Scheduling": "Sosyal Medya Planlama",
+        "Plan and publish content automatically.": "İçeriği otomatik planlayıp yayınlayın.",
+        "Order & Inventory Tracking": "Sipariş & Stok Takibi",
+        "Stay on top of stock and orders in real time.": "Stok ve siparişleri gerçek zamanlı takip edin.",
+        "Automated Reporting": "Otomatik Raporlama",
+        "Daily and weekly reports, delivered automatically.": "Günlük ve haftalık raporlar otomatik gelsin.",
+        "Request a Demo": "Demo İste",
+
+        // Hizmetler
+        "Our Services": "Hizmetlerimiz",
+        "You tell us. We build it.": "Siz anlatın. Biz kuralım.",
+        "Tell us where your business is losing time or customers — we design and build the digital solution that fixes it, working alongside you like part of your team.":
+            "İşletmenizin nerede zaman ya da müşteri kaybettiğini anlatın — onu çözen dijital çözümü, ekibinizin bir parçası gibi yanınızda çalışarak tasarlayıp kuralım.",
+        "Find Your Best Opportunity": "En İyi Fırsatınızı Bulun",
+        "We analyze your current workflows, identify inefficiencies, and design a clear automation roadmap tailored to your business operations.":
+            "Mevcut iş akışlarınızı analiz eder, verimsizlikleri tespit eder ve işinize özel net bir otomasyon yol haritası tasarlarız.",
+        "Connect Your Tools & Data": "Araçlarınızı ve Verinizi Bağlayın",
+        "We design scalable system architectures that connect your tools, data sources, and teams into a unified, efficient operations layer.":
+            "Araçlarınızı, veri kaynaklarınızı ve ekiplerinizi tek ve verimli bir operasyon katmanında birleştiren ölçeklenebilir sistem mimarileri tasarlarız.",
+        "Simple, Intuitive AI": "Sade ve Kolay Yapay Zekâ",
+        "We craft AI-native interfaces and interaction models that make complex automation workflows intuitive and accessible for your entire team.":
+            "Karmaşık otomasyon iş akışlarını tüm ekibiniz için sezgisel ve erişilebilir kılan yapay zekâ odaklı arayüzler ve etkileşim modelleri tasarlarız.",
+        "Always Improving": "Sürekli Daha İyiye",
+        "We continuously monitor, tune, and improve your automation systems to ensure peak performance as your business scales.":
+            "İşiniz büyürken sistemlerinizin en yüksek performansta çalışmasını sağlamak için otomasyonu sürekli izler, ayarlar ve iyileştiririz.",
+        "End-to-End Workflow Automation": "Uçtan Uca İş Akışı Otomasyonu",
+
+        // Süreç
+        "The shortest path between problem and solution": "Sorun ve çözüm arasındaki en kısa mesafe",
+        "You experience a transparent process, purpose-built so every project delivers measurable results on time.":
+            "Her projenin zamanında ve ölçülebilir sonuç vermesi için özel olarak planlanmış şeffaf bir süreç tecrübe edersiniz.",
+        "Discovery": "Keşif",
+        "We deep-dive into your operations, map pain points, and find automation opportunities with the highest ROI.":
+            "Operasyonlarınızı derinlemesine inceler, sorunlu noktaları haritalar ve en yüksek getiriye sahip otomasyon fırsatlarını buluruz.",
+        "Design": "Tasarım",
+        "We architect the solution — defining system flows, integrations, and success metrics before a single line of code is written.":
+            "Çözümü baştan tasarlarız — tek satır kod yazılmadan önce sistem akışlarını, entegrasyonları ve başarı ölçütlerini tanımlarız.",
+        "Build": "İnşa",
+        "Our engineers build, test, and iterate on your automation system, ensuring reliability and seamless integration.":
+            "Mühendislerimiz otomasyon sisteminizi güvenilirlik ve kusursuz entegrasyon sağlayacak şekilde kurar, test eder ve geliştirir.",
+        "Launch & Optimize": "Devreye Al & Optimize Et",
+        "We deploy, monitor performance, and continuously tune your systems so they improve as your business grows.":
+            "Sistemleri devreye alır, performansı izler ve işiniz büyüdükçe gelişmeleri için sürekli ayarlarız.",
+
+        // CTA
+        "Ready to take your business": "İşinizi bir sonraki",
+        "to the next level?": "seviyeye taşımaya hazır mısınız?",
+        "Book a free 30-minute discovery call. No commitment — just clarity on where AI can help you most.":
+            "Ücretsiz 30 dakikalık bir keşif görüşmesi ayarlayın. Taahhüt yok — sadece yapay zekânın size en çok nerede yardımcı olabileceğine dair netlik.",
+
+        // Footer
+        "Digital automation and AI integration agency helping businesses work smarter, not harder.":
+            "İşletmelerin daha akıllı çalışmasına yardımcı olan dijital otomasyon ve yapay zekâ entegrasyonu ajansı.",
+        "© 2026 seelynow Digital Automation Agency. All rights reserved.":
+            "© 2026 seelynow Dijital Otomasyon Ajansı. Tüm hakları saklıdır.",
+        "Built with precision. Powered by AI.": "Özenle inşa edildi. Yapay zekâ ile güçlendirildi."
+    };
+
+    const TITLE_TR = "seelynow – İşletmenizi Büyüten Yapay Zekâ Çözümleri";
+    const ORIG_TITLE = document.title;
+    const norm = (s) => s.replace(/\s+/g, ' ').trim();
+
+    function eachTextNode(fn) {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(n) {
+                const p = n.parentNode;
+                if (!p) return NodeFilter.FILTER_REJECT;
+                const tag = p.nodeName;
+                if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+                if (p.id === 'lang-toggle') return NodeFilter.FILTER_REJECT;
+                if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(fn);
+    }
+
+    function applyLang(lang) {
+        eachTextNode((node) => {
+            if (node._orig === undefined) node._orig = node.nodeValue;
+            if (lang === 'en') { node.nodeValue = node._orig; return; }
+            const t = TR[norm(node._orig)];
+            if (t === undefined) return;
+            const lead = node._orig.match(/^\s*/)[0];
+            const trail = node._orig.match(/\s*$/)[0];
+            node.nodeValue = lead + t + trail;
+        });
+        document.documentElement.lang = lang;
+        document.title = lang === 'tr' ? TITLE_TR : ORIG_TITLE;
+        const btn = document.getElementById('lang-toggle');
+        if (btn) btn.textContent = lang === 'tr' ? 'EN' : 'TR';
+        try { localStorage.setItem('seely_lang', lang); } catch (e) {}
+    }
+
+    // Dil değiştirme butonunu navigasyona ekle
+    const ctaWrap = document.querySelector('header .flex.items-center.gap-3');
+    if (ctaWrap) {
+        const btn = document.createElement('button');
+        btn.id = 'lang-toggle';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Change language / Dil değiştir');
+        btn.className = 'order-first px-3 py-2 rounded-lg border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary text-sm font-semibold transition-colors';
+        btn.textContent = 'TR';
+        btn.addEventListener('click', () => {
+            const next = document.documentElement.lang === 'tr' ? 'en' : 'tr';
+            applyLang(next);
+        });
+        ctaWrap.insertBefore(btn, ctaWrap.firstChild);
+    }
+
+    let saved = 'en';
+    try { saved = localStorage.getItem('seely_lang') || 'en'; } catch (e) {}
+    applyLang(saved);
+}());
+</script>
+
+<!-- ════════════ AI ASSISTANT WIDGET ════════════ -->
+<script src="https://seely-deal.vercel.app/widget.js" defer></script>
+
+</body>
+</html>
