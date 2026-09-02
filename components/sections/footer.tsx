@@ -17,7 +17,7 @@ const LEGAL_LINKS = [
  * telif) koyu temaya taşındı. */
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#05070D] pb-6 pt-16" role="contentinfo">
+    <footer className="relative overflow-hidden border-t border-ink/10 bg-surface-sunken pb-6 pt-16" role="contentinfo">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -33,16 +33,16 @@ export function Footer() {
           <div className="md:col-span-2">
             <a href="/" className="mb-5 flex w-fit items-center gap-2.5">
               <img src="/logo/mark.svg" alt="" aria-hidden="true" className="h-7 w-7" />
-              <span className="text-lg font-extrabold tracking-tight text-white">seelynow</span>
+              <span className="text-lg font-extrabold tracking-tight text-ink">seelynow</span>
             </a>
-            <p className="max-w-xs text-sm leading-relaxed text-white/60">
+            <p className="max-w-xs text-sm leading-relaxed text-ink-soft">
               İşletmelerin daha akıllı çalışmasına yardımcı olan dijital otomasyon ve yapay zekâ entegrasyonu
               ajansı.
             </p>
             <div className="mt-6 flex gap-3">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-[#8B5CF6]"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-ink/10 text-ink transition-colors hover:bg-[#8B5CF6] hover:text-white"
                 aria-label="Bize e-posta gönderin"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
@@ -51,11 +51,11 @@ export function Footer() {
           </div>
 
           <nav aria-label="Şirket linkleri">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">Şirket</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink/40">Şirket</p>
             <ul className="space-y-3">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-white/75 transition-colors hover:text-[#06B6D4]">
+                  <a href={link.href} className="text-sm text-ink/75 transition-colors hover:text-[#06B6D4]">
                     {link.label}
                   </a>
                 </li>
@@ -64,11 +64,11 @@ export function Footer() {
           </nav>
 
           <nav aria-label="Yasal linkler">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/40">Yasal</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink/40">Yasal</p>
             <ul className="space-y-3">
               {LEGAL_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-white/75 transition-colors hover:text-[#06B6D4]">
+                  <a href={link.href} className="text-sm text-ink/75 transition-colors hover:text-[#06B6D4]">
                     {link.label}
                   </a>
                 </li>
@@ -77,9 +77,9 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 md:flex-row">
-          <p className="text-xs text-white/60">&copy; 2026 Seelynow Dijital Otomasyon Ajansı. Tüm hakları saklıdır.</p>
-          <p className="text-xs text-white/35">Özenle inşa edildi. Yapay zekâ ile güçlendirildi.</p>
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 md:flex-row">
+          <p className="text-xs text-ink/60">&copy; 2026 Seelynow Dijital Otomasyon Ajansı. Tüm hakları saklıdır.</p>
+          <p className="text-xs text-ink/35">Özenle inşa edildi. Yapay zekâ ile güçlendirildi.</p>
         </div>
       </div>
     </footer>

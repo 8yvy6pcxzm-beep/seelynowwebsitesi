@@ -37,7 +37,7 @@ export function Process() {
           <h2 className="mt-2 text-3xl font-extrabold text-ink sm:text-4xl">
             Sorun ve çözüm arasındaki en kısa mesafe
           </h2>
-          <p className="mt-3 text-base text-gray-400 lg:text-lg">
+          <p className="mt-3 text-base text-ink-soft lg:text-lg">
             Her projenin zamanında ve ölçülebilir sonuç vermesi için özel olarak planlanmış şeffaf bir süreç
             tecrübe edersiniz.
           </p>
@@ -47,8 +47,8 @@ export function Process() {
       <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {STEPS.map((step, i) => (
           <ScrollReveal key={step.number} delay={i * 0.08}>
-            <li className="glass h-full rounded-xl2 border border-white/10 p-7">
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 font-extrabold text-magic-cyan">
+            <li className="glass h-full rounded-xl2 border border-ink/10 p-7">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-ink/10 bg-ink/5 font-extrabold text-magic-cyan">
                 {step.number}
               </div>
               <h3 className="text-base font-bold text-ink">{step.title}</h3>

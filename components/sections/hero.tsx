@@ -26,7 +26,7 @@ const TRUST_ROW = [
  * yerine katmanlı cam "dashboard mockup" (floating animation). */
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] overflow-hidden bg-[#080C14]">
+    <section className="relative min-h-[92vh] overflow-hidden bg-surface">
       <div className="absolute inset-0">
         <AmbientCanvas />
       </div>
@@ -43,7 +43,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl flex-col items-center gap-14 px-6 py-24 md:flex-row md:items-center md:justify-between md:py-0">
         <div className="max-w-xl space-y-7 text-center md:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-white/60">
+          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-ink/5 px-3 py-1 text-xs font-semibold tracking-wide text-ink/60">
             <img src="/logo/mark.svg" alt="" aria-hidden="true" className="h-4 w-4" />
             seelynow
           </span>
@@ -53,7 +53,7 @@ export function Hero() {
               İşinizi Ölçekleyin
             </span>
           </h1>
-          <p className="max-w-md text-base text-gray-400 lg:text-lg">
+          <p className="max-w-md text-base text-ink-soft lg:text-lg">
             İşletmeniz için 7/24 çalışan akıllı sistemler kuruyoruz. Daha fazla verim, sıfır karmaşa.
           </p>
           <div className="flex flex-wrap justify-center gap-3 md:justify-start">
@@ -69,7 +69,7 @@ export function Hero() {
             {TRUST_ROW.map((item) => {
               const Icon = item.icon;
               return (
-                <span key={item.label} className="flex items-center gap-1.5 text-xs font-medium text-white/50">
+                <span key={item.label} className="flex items-center gap-1.5 text-xs font-medium text-ink/50">
                   <Icon className="h-3.5 w-3.5 text-[#06B6D4]" aria-hidden="true" />
                   {item.label}
                 </span>
@@ -81,10 +81,10 @@ export function Hero() {
         <motion.div
           animate={{ y: [0, -14, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="glass w-full max-w-sm rounded-xl2 border border-white/10 p-6 backdrop-blur-xl"
+          className="glass w-full max-w-sm rounded-xl2 border border-ink/10 p-6 backdrop-blur-xl"
           aria-hidden="true"
         >
-          <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="mb-5 flex items-center justify-between border-b border-ink/10 pb-4">
             <span className="flex gap-1.5" aria-hidden="true">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF6A2B]/80" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#8B5CF6]/80" />
@@ -102,7 +102,7 @@ export function Hero() {
                 key={row.label}
                 animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
                 transition={{ duration: 5 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
-                className="glass-dark flex items-center justify-between rounded-xl border border-white/10 px-4 py-3"
+                className="glass-dark flex items-center justify-between rounded-xl border border-ink/10 px-4 py-3"
               >
                 <span className="text-sm text-ink-soft">{row.label}</span>
                 <span
@@ -115,7 +115,7 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="mt-5 h-20 overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-3">
+          <div className="mt-5 h-20 overflow-hidden rounded-xl border border-ink/10 bg-ink/[0.03] p-3">
             <svg viewBox="0 0 200 60" className="h-full w-full" aria-hidden="true">
               <polyline
                 points="0,45 25,30 50,38 75,15 100,25 125,10 150,20 175,5 200,18"

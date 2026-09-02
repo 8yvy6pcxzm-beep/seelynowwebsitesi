@@ -22,7 +22,7 @@ export function Contact() {
         <div className="mb-10 text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-magic-cyan">İletişim</span>
           <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">Bize yazın</h2>
-          <p className="mt-2 text-base text-gray-400 lg:text-lg">
+          <p className="mt-2 text-base text-ink-soft lg:text-lg">
             Ya da doğrudan <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent-400 underline underline-offset-4">{CONTACT_EMAIL}</a>
           </p>
         </div>
@@ -48,13 +48,13 @@ export function Contact() {
                   required
                   type="text"
                   placeholder="Adınız"
-                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
+                  className="rounded-xl border border-ink/10 bg-ink/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
                 />
                 <input
                   required
                   type="email"
                   placeholder="E-posta"
-                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
+                  className="rounded-xl border border-ink/10 bg-ink/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
                 />
               </div>
               <textarea
@@ -62,7 +62,7 @@ export function Contact() {
                 rows={4}
                 placeholder="Nasıl yardımcı olabiliriz?"
                 defaultValue={service ? `Merhaba, "${service}" hizmeti hakkında brief vermek istiyorum:\n\n` : undefined}
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
+                className="w-full resize-none rounded-xl border border-ink/10 bg-ink/5 px-4 py-3 text-sm text-ink placeholder:text-ink-soft focus:border-accent-500 focus:outline-none"
               />
               <GlowButton type="submit" variant="primary" className="w-full justify-center">
                 Gönder

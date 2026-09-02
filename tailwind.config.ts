@@ -32,18 +32,18 @@ export default {
           cyan: "#06B6D4",
           lime: "#A6D608",
         },
-        // Tüm site artık koyu tema (B2B Glassmorphism Techwave — slate navy zemin)
+        // Light/Dark Mode: değerler app/globals.css'teki CSS değişkenlerinden
+        // gelir (--color-surface, --color-ink, ...). rgb(var(...) / <alpha-value>)
+        // deseni sayesinde `bg-surface/40`, `text-ink/60` gibi opaklık
+        // modifikatörleri de tema-duyarlı kalır.
         surface: {
-          DEFAULT: "#080C14",
-          sunken: "#05070D",
-          raised: "#0E1420",
-          line: "rgba(255,255,255,0.1)",
-          dark: "#080C14",
-          "dark-sunken": "#05070D",
+          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
+          sunken: "rgb(var(--color-surface-sunken) / <alpha-value>)",
+          raised: "rgb(var(--color-surface-raised) / <alpha-value>)",
         },
         ink: {
-          DEFAULT: "#F2F1F5",
-          soft: "#9B99A8",
+          DEFAULT: "rgb(var(--color-ink) / <alpha-value>)",
+          soft: "rgb(var(--color-ink-soft) / <alpha-value>)",
         },
       },
       borderRadius: {

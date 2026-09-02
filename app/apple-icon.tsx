@@ -3,8 +3,11 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-/** iOS ana ekrana eklendiğinde kullanılan apple-touch-icon — Next.js
- * otomatik olarak <link rel="apple-touch-icon"> etiketini enjekte eder. */
+const ACCENT_ORANGE = "#FF6A2B";
+
+/** iOS ana ekrana eklendiğinde kullanılan apple-touch-icon — markanın
+ * turuncu dairesel nokta matrisi, opak zemin üzerinde (iOS şeffaf ikonları
+ * siyahla doldurduğu için burada dolu daire kullanılır). */
 export default function AppleIcon() {
   return new ImageResponse(
     (
@@ -15,19 +18,20 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #8B5CF6, #06B6D4)",
+          background: ACCENT_ORANGE,
         }}
       >
-        <span
-          style={{
-            fontSize: 108,
-            fontWeight: 800,
-            color: "#fff",
-            fontFamily: "system-ui, sans-serif",
-          }}
-        >
-          s
-        </span>
+        <svg width="60%" height="60%" viewBox="0 0 200 200" fill="none">
+          <circle cx="70" cy="70" r="12" fill="#ffffff" />
+          <circle cx="100" cy="70" r="12" fill="#ffffff" />
+          <circle cx="130" cy="70" r="12" fill="#ffffff" />
+          <circle cx="70" cy="100" r="12" fill="#ffffff" />
+          <circle cx="100" cy="100" r="12" fill="#ffffff" />
+          <circle cx="130" cy="100" r="12" fill="#ffffff" />
+          <circle cx="70" cy="130" r="12" fill="#ffffff" />
+          <circle cx="100" cy="130" r="12" fill="#ffffff" />
+          <circle cx="130" cy="130" r="12" fill="#ffffff" />
+        </svg>
       </div>
     ),
     { ...size },

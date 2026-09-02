@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { siteMetadata } from "@/lib/seo";
+import { themeInitScript } from "@/lib/theme";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
 import "./globals.css";
@@ -28,6 +29,10 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${plusJakartaSans.variable} ${jetBrainsMono.variable}`}>
       <body className="font-sans antialiased">
+        {/* Tema flaşını (FOUC) önleyen engelleyici script — paint'ten önce
+           localStorage tercihini <html data-theme>'e uygular. */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+
         <Header />
         {children}
         <Footer />

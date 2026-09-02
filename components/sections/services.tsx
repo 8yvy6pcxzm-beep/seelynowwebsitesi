@@ -92,7 +92,7 @@ function ServiceCard({ service }: { service: Service }) {
       onPointerLeave={reset}
       style={{ rotateX, rotateY, scale, transformPerspective: 800 }}
       className={cn(
-        "glass group relative flex flex-col overflow-hidden rounded-xl2 border border-white/10 p-7 transition-shadow duration-300",
+        "glass group relative flex flex-col overflow-hidden rounded-xl2 border border-ink/10 p-7 transition-shadow duration-300",
         service.span,
       )}
     >
@@ -109,13 +109,13 @@ function ServiceCard({ service }: { service: Service }) {
           sadece hover'da belirir. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-xl2 border border-white/15 opacity-35 transition-opacity duration-300 md:border-0 md:opacity-0 md:group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-xl2 border border-ink/15 opacity-35 transition-opacity duration-300 md:border-0 md:opacity-0 md:group-hover:opacity-100"
         style={{
           boxShadow: `inset 0 0 0 1px color-mix(in oklch, ${service.glow} 55%, transparent), 0 0 40px -8px ${service.glow}`,
         }}
       />
       <div
-        className="relative z-10 mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5"
+        className="relative z-10 mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-ink/10 bg-ink/5"
         style={{ color: service.glow }}
       >
         <Icon className="h-6 w-6" aria-hidden="true" />
@@ -125,7 +125,7 @@ function ServiceCard({ service }: { service: Service }) {
 
       <ul className="relative z-10 mt-4 space-y-1.5">
         {service.deliverables.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-xs text-white/60">
+          <li key={item} className="flex items-start gap-2 text-xs text-ink/60">
             <span
               className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
               style={{ backgroundColor: service.glow }}
@@ -154,17 +154,17 @@ function ServiceCard({ service }: { service: Service }) {
 function BuiltByUsCard() {
   return (
     <div
-      className="group relative overflow-hidden rounded-xl2 border border-white/10 p-7 sm:col-span-3"
+      className="group relative overflow-hidden rounded-xl2 border border-ink/10 p-7 sm:col-span-3"
       style={{
         background:
           "radial-gradient(60% 100% at 0% 0%, color-mix(in oklch, #8b5cf6 16%, transparent) 0%, transparent 60%), " +
           "radial-gradient(60% 100% at 100% 100%, color-mix(in oklch, #06b6d4 14%, transparent) 0%, transparent 60%), " +
-          "color-mix(in oklch, white 5%, transparent)",
+          "color-mix(in oklch, rgb(var(--glass-tint)) 5%, transparent)",
       }}
     >
       <div className="relative z-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-4">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#06B6D4]">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-ink/10 bg-ink/5 text-[#06B6D4]">
             <Sparkles className="h-6 w-6" aria-hidden="true" />
           </div>
           <div>
@@ -180,7 +180,7 @@ function BuiltByUsCard() {
           href="https://seelydeal.seelynow.com"
           target="_blank"
           rel="noreferrer"
-          className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          className="flex shrink-0 items-center gap-1.5 rounded-full border border-ink/10 bg-ink/5 px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink/10"
         >
           İncele
           <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />

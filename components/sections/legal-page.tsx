@@ -22,7 +22,7 @@ export function LegalPage({
 
       <div className="mt-10 space-y-8">
         {sections.map((section) => (
-          <section key={section.heading} className="glass rounded-xl2 border border-white/10 p-6">
+          <section key={section.heading} className="glass rounded-xl2 border border-ink/10 p-6">
             <h2 className="mb-2 text-xl font-bold text-ink">{section.heading}</h2>
             <div className="space-y-2 text-sm leading-relaxed text-ink-soft">{section.body}</div>
           </section>

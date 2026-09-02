@@ -6,32 +6,70 @@
   :root {
     --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
     --font-mono: "JetBrains Mono", monospace;
+
+    /* Dark mode (varsayılan) — sert katran siyahı yerine yumuşak, premium
+       füme/koyu lacivert-gri (GitHub-dark tarzı, göz yormayan). RGB triplet
+       formatında: Tailwind'in rgb(var(...) / <alpha-value>) deseniyle hem
+       tema-duyarlı hem opaklık-modifiye edilebilir token'lar üretir. */
+    --color-surface: 13 17 23; /* #0D1117 */
+    --color-surface-sunken: 9 12 17; /* #090C11 */
+    --color-surface-raised: 20 25 34; /* #141922 */
+    --color-ink: 242 241 245; /* #F2F1F5 */
+    --color-ink-soft: 155 153 168; /* #9B99A8 */
+    /* Cam efektlerinin (.glass) beyaz/siyah tonu — dark'ta beyaz karışım,
+       light'ta koyu karışım verir, aynı utility class'lar iki temada da
+       doğru kontrastta kalır. */
+    --glass-tint: 255 255 255;
   }
 
-  /* B2B Glassmorphism Techwave: tüm site slate navy tek zemin (#080C14) —
-     açık/koyu ayrımı yok, SeelyDeal'in kendi (light) tasarım diline dokunmaz. */
+  /* Light mode — ferah, krem/açık gri. Aynı token adları, farklı değerler;
+     hiçbir bileşen sınıfı değişmiyor, sadece renkler. */
+  [data-theme="light"] {
+    --color-surface: 247 245 242; /* #F7F5F2 */
+    --color-surface-sunken: 237 233 227; /* #EDE9E3 */
+    --color-surface-raised: 255 255 255; /* #FFFFFF */
+    --color-ink: 22 22 26; /* #16161A */
+    --color-ink-soft: 92 92 104; /* #5C5C68 */
+    --glass-tint: 10 10 14;
+  }
+
   body {
-    background: #080c14;
-    color: #f2f1f5;
+    background: rgb(var(--color-surface));
+    color: rgb(var(--color-ink));
+  }
+
+  /* Tema değişiminde yumuşak geçiş — layout/transform'a dokunmadan sadece
+     renk özelliklerinde; framer-motion animasyonlarıyla çakışmaz. */
+  body,
+  header,
+  footer,
+  section,
+  a,
+  button,
+  input,
+  textarea,
+  svg {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, fill 0.35s ease;
   }
 }
 
 @layer utilities {
-  /* Tüm kartlar/formlar için tek cam stili — koyu zemin üzerinde ince
-     buzlu cam, leinDigital referansındaki gibi. */
+  /* Tüm kartlar/formlar için tek cam stili — zemin üzerinde ince buzlu cam,
+     leinDigital referansındaki gibi. --glass-tint token'ı sayesinde dark'ta
+     beyaz, light'ta koyu karışım kullanır. */
   .glass {
-    background: color-mix(in oklch, white 6%, transparent);
+    background: color-mix(in oklch, rgb(var(--glass-tint)) 6%, transparent);
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid color-mix(in oklch, white 10%, transparent);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in oklch, rgb(var(--glass-tint)) 10%, transparent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16), inset 0 1px 0 color-mix(in oklch, rgb(var(--glass-tint)) 6%, transparent);
   }
 
   .glass-dark {
-    background: color-mix(in oklch, white 4%, transparent);
+    background: color-mix(in oklch, rgb(var(--glass-tint)) 4%, transparent);
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid color-mix(in oklch, white 12%, transparent);
+    border: 1px solid color-mix(in oklch, rgb(var(--glass-tint)) 12%, transparent);
   }
 
   /* Neon glow halkası — kart/buton hover'ında (mor/cyan/turuncu karışımı). */

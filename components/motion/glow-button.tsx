@@ -15,10 +15,10 @@ const styles = (variant: "primary" | "glass") =>
   cn(
     "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold",
     "transition-[box-shadow,background-color,border-color] duration-300",
-    "outline-none focus-visible:ring-2 focus-visible:ring-[#06B6D4] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080C14]",
+    "outline-none focus-visible:ring-2 focus-visible:ring-[#06B6D4] focus-visible:ring-offset-2 focus-visible:ring-offset-surface",
     variant === "primary"
       ? "bg-accent-500 text-white shadow-glow hover:shadow-glow-lg active:shadow-glow"
-      : "glass-dark text-white hover:bg-white/10 hover:shadow-[0_0_28px_-8px_#8B5CF6] active:bg-white/[0.06]",
+      : "glass-dark text-ink hover:bg-ink/10 hover:shadow-[0_0_28px_-8px_#8B5CF6] active:bg-ink/[0.06]",
   );
 
 /** CTA butonu — birincil (turuncu, dış glow) veya cam (koyu zemin üzerinde

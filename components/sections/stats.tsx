@@ -32,7 +32,7 @@ export function Stats() {
         {STATS.map((item, i) => (
           <ScrollReveal key={item.title} delay={i * 0.06}>
             <div
-              className="glass group flex h-full min-h-[168px] flex-col justify-between rounded-xl2 border border-white/10 p-6 transition-shadow duration-300"
+              className="glass group flex h-full min-h-[168px] flex-col justify-between rounded-xl2 border border-ink/10 p-6 transition-shadow duration-300"
               style={{ "--rim-color": item.glow } as React.CSSProperties}
             >
               <span
